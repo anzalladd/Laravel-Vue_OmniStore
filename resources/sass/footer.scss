@@ -1,0 +1,126 @@
+@import 'variables';
+/* Footer */
+
+footer {
+    background-color: $main-color;
+    padding-top: 80px;
+    margin-top: 120px;
+}
+
+footer h4,
+footer p {
+    color: var(--white);
+}
+
+footer h4 {
+    text-transform: uppercase;
+}
+
+footer p {
+    margin-top: 25px;
+}
+
+footer .information * {
+    padding-left: 10px;
+}
+
+footer .information h4 {
+    padding-left: 30px;
+}
+
+footer .information ul {
+    list-style-type: none;
+}
+
+footer .subcription .input-subcription {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer .subcription .input-subcription input {
+    padding: 15px 20px 15px 15px;
+    width: 267px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    color: #979DB1;
+}
+
+footer .subcription .input-subcription input::placeholder {
+    color: #979DB1;
+}
+
+footer .social {
+    margin-top: 35px;
+}
+
+footer .social img:nth-child(2) {
+    margin: 0 35px;
+}
+
+footer .pattern-foot img {
+    display: block;
+    width: 100%;
+}
+
+footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 0;
+}
+
+footer .copyright small {
+    color: $white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* End Of Footer */
+
+@media only screen and (max-width: 991px) {
+    footer h4 {
+        margin-top: 40px;
+    }
+
+    footer .information * {
+        padding-left: unset;
+    }
+
+    footer .information h4 {
+        padding-left: unset;
+    }
+
+}
+@media only screen and (max-width:425px) {
+    footer .social {
+        margin-bottom: 30px;
+    }
+
+    footer .subcription .input-subcription {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .subcription .input-subcription button {
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width:240px) {
+    footer .subcription .input-subcription input {
+        width: 200px;
+    }
+
+    footer .social img {
+        width: 25px;
+        height: 25px;
+    }
+
+    footer .social img:nth-child(2) {
+        margin: 0 20px;
+    }
+}
