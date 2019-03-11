@@ -30,8 +30,7 @@
         <div class="cont">
             <h2>Category</h2>
             <!-- Categories -->
-            <div class="categories">
-
+            <div class="categories">   
                 <div class="category_1">
                     <div class="row">
                         <div class="col-lg-5">
