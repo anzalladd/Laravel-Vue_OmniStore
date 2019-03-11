@@ -50,12 +50,13 @@
                 </div>
             </div>
             </div>
-          
             <div class="related-product">
-                <carousel class="carousel" :scrollPerPage="true" :perPageCustom="[[480, 2], [768, 4]]">
+                <carousel class="carousel" :scrollPerPage="true" :perPageCustom="[[480, 2], [768, 3]]">
                   <slide  v-for="item in relate_product" :key="item.id">
-                      <img :src="item.image" alt="">
+                      <div>
+                     <img :src="item.image" alt="">
                       <p>{{item.product_name}}</p>
+                      </div>
                   </slide>
             </carousel>
             </div>
@@ -79,10 +80,10 @@ export default {
         },
         data(){
             return{
-                id: this.$route.params.id,
+                id_: this.$route.params.id,
                 detail: [],
                 cat_id: this.$route.params.category_id,
-                relate_product:[]
+                relate_product:[],
             }
         },
         mounted(){
@@ -91,19 +92,21 @@ export default {
         },
         methods:{
             getDetail() {
-                axios.get('/api/products/' + this.id)
+                axios.get('/api/products/' + this.id_)
                     .then(res => this.detail = res.data);
             },
             getRelated(){
                 axios.get('/api/categories/' + this.cat_id)
-                    .then(res => this.relate_product = res.data.product);
-            }
+                       .then(res => this.relate_product = res.data.product.filter(function(item){
+                           return item.id != this.id_ 
+                       }.bind(this)));
+            },
         },
         filters:{
             formatNumber(value){
                 return numeral(value).format("0,0");
             }
-        },
+        }
 }
 </script>
 

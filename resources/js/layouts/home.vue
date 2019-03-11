@@ -37,7 +37,7 @@
                         <div class="col-lg-5">
                             <div v-for="category in isOne" :key="category.id">
                             <img :src="category.category_image" alt="Cloth">
-                            <router-link to="/1">
+                            <router-link to="product/1">
                             <a>{{category.category_name}}</a>
                             </router-link>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="offset-lg-1 col-lg-6">
                             <div v-for="category in isTwo" :key="category.id">
                             <img :src="category.category_image" alt="Totebag">
-                              <router-link to="/2">
+                              <router-link to="product/2">
                             <a>{{category.category_name}}</a>
                             </router-link>
                             </div>
@@ -57,7 +57,7 @@
                         <div class="col-lg-6">
                             <div v-for="category in isThree" :key="category.id">
                             <img :src="category.category_image" alt="Cloth">
-                            <router-link to="/3">
+                            <router-link to="product/3">
                             <a>{{category.category_name}}</a>
                             </router-link>
                             </div>
@@ -65,7 +65,7 @@
                         <div class="col-lg-offset-1 col-lg-5">
                             <div v-for="category in isFour" :key="category.id">
                             <img :src="category.category_image" alt="Cloth">
-                              <router-link to="/4">
+                              <router-link to="product/4">
                             <a>{{category.category_name}}</a>
                             </router-link>
                             </div>
@@ -77,7 +77,7 @@
                         <div class="col-lg-7">
                             <div v-for="category in isFive" :key="category.id">
                             <img :src="category.category_image" alt="Cloth">
-                              <router-link to="/5">
+                              <router-link to="product/5">
                             <a>{{category.category_name}}</a>
                             </router-link>
                             </div>
@@ -112,7 +112,7 @@ export default {
         this.getCategories();
     },
     methods: {
-        getCategories(){
+        getCategories(){    
             axios.get('/api/categories')
             .then(res => this.categories = res.data);    
         }

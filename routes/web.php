@@ -15,3 +15,6 @@ Route::get('/{detail}/{id}',function(){
 Route::get('/{detail}/{id}/{category_id}',function(){
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('auth/register', 'AuthController@register');

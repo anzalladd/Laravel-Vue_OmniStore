@@ -24,8 +24,10 @@
         "vue-template-compiler": "^2.6.8"
     },
     "dependencies": {
+        "@websanova/vue-auth": "^2.21.14-beta",
         "laue": "^0.2.0",
         "numeral": "^2.0.6",
+        "vue-axios": "^2.1.4",
         "vue-carousel": "^0.18.0-alpha",
         "vue-router": "^3.0.2"
     }
