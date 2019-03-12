@@ -3,7 +3,7 @@
         <div class="alert alert-danger" v-if="error">
             <p>There was an error, unable to sign in with those credentials.</p>
         </div>
-        <form autocomplete="off" @submit.prevent="login()" method="POST">
+        <form autocomplete="off" @submit.prevent="login()" method="post">
             <input type="hidden" name="_token" :value="csrf">
             <div class="form-group">
                 <label for="email">E-mail</label>

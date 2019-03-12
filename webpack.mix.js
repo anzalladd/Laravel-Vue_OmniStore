@@ -21,7 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
           entries[entry.replace(/^\//, '')] = webpackConfig.entry[entry];
           return entries;
         }, {});
-    
+
         // Remove leading '/' from ExtractTextPlugin instances
         webpackConfig.plugins.forEach((plugin) => {
           if (plugin.constructor.name === 'ExtractTextPlugin') {
