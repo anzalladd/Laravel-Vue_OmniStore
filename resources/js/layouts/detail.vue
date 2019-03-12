@@ -92,11 +92,11 @@ export default {
         },
         methods:{
             getDetail() {
-                axios.get('/api/products/' + this.id_)
+                axios.get('/products/' + this.id_)
                     .then(res => this.detail = res.data);
             },
             getRelated(){
-                axios.get('/api/categories/' + this.cat_id)
+                axios.get('/categories/' + this.cat_id)
                        .then(res => this.relate_product = res.data.product.filter(function(item){
                            return item.id != this.id_ 
                        }.bind(this)));
@@ -140,11 +140,7 @@ export default {
 }
 
 .content .product .small-picture {
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    @extend .flex-box;
     justify-content: space-between;
     width: 80%;
     margin-top: 20px;
@@ -160,21 +156,13 @@ export default {
 }
 
 .content .detail-product .inputan {
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+     @extend .flex-box;
     flex-direction: row;
     align-items: center;
 }
 
 .content .detail-product .inputan .choice {
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    @extend .flex-box;
     flex-direction: row;
 }
 

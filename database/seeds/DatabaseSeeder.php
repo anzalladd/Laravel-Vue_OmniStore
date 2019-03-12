@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $faker = Factory::create();
         foreach (range(1,20) as $i) {
             Product::create([
+                'id' => $i,
                 'product_name' => 'Product Name'.$i,
                 'price' => mt_rand(100000,200000),
                 'image' => $faker->imageUrl($width = 640, $height=480),

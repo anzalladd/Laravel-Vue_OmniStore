@@ -45,11 +45,11 @@
         },
         methods: {
             getCategory() {
-                axios.get('/api/categories/' + this.id)
+                axios.get('/categories/' + this.id)
                     .then(res => this.category = res.data.product);
             },
             getTitle(){
-                axios.get('/api/categories/' + this.id)
+                axios.get('/categories/' + this.id)
                 .then(res => this.title = res.data.category_name)
             }
         }

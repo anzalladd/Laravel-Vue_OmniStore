@@ -11,6 +11,7 @@ import Detail from './layouts/detail.vue'
 import Login from './components/login.vue'
 import Register from './components/register.vue'
 import Dashboard from './components/dashboard.vue'
+import homeDashboard from './components/homeDashboard.vue'
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios);
 axios.defaults.baseURL = 'http://localhost:8000/api/';
@@ -46,6 +47,11 @@ const router = new VueRouter({
             path: '/dashboard',
             name: 'dashboard',
             component: Dashboard,
+            children:[
+                {
+                    path:'', component: homeDashboard
+                }
+            ],
             meta: {
                 auth: true
             }

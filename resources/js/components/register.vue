@@ -4,7 +4,8 @@
             <p>There was an error, unable to complete registration.</p>
         </div>
         <div class="alert alert-success" v-if="success">
-            <p>Registration completed. You can now <router-link :to="{name:'login'}">sign in.</router-link></p>
+            <p>Registration completed. You can now <router-link :to="{name:'login'}">sign in.</router-link>
+            </p>
         </div>
         <form autocomplete="off" @submit.prevent="register()" v-if="!success" method="post">
             <div class="form-group" v-bind:class="{ 'has-error': error && errors.name }">
@@ -14,7 +15,8 @@
             </div>
             <div class="form-group" v-bind:class="{ 'has-error': error && errors.email }">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
+                <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email"
+                    required>
                 <span class="help-block" v-if="error && errors.email">{{ errors.email }}</span>
             </div>
             <div class="form-group" v-bind:class="{ 'has-error': error && errors.password }">
@@ -27,9 +29,9 @@
     </div>
 </template>
 
-<script> 
+<script>
     export default {
-        data(){
+        data() {
             return {
                 name: '',
                 email: '',
@@ -40,14 +42,14 @@
             };
         },
         methods: {
-            register(){
+            register() {
                 var app = this
                 this.$auth.register({
                     data: {
                         name: app.name,
                         email: app.email,
                         password: app.password
-                    }, 
+                    },
                     success: function () {
                         app.success = true
                     },
@@ -56,8 +58,9 @@
                         app.errors = resp.response.data.errors;
                     },
                     redirect: null
-                });                
+                });
             }
         }
     }
+
 </script>
