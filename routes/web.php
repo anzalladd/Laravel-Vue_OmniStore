@@ -17,4 +17,3 @@ Route::get('/{detail}/{id}/{category_id}',function(){
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('auth/register', 'AuthController@register');

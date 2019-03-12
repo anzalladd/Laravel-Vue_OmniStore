@@ -13,6 +13,7 @@ import Register from './components/register.vue'
 import Dashboard from './components/dashboard.vue'
 Vue.use(VueRouter)
 Vue.use(VueAxios, axios);
+axios.defaults.baseURL = 'http://localhost:8000/api/';
 const router = new VueRouter({
     mode: 'history',
     routes: [
@@ -53,16 +54,11 @@ const router = new VueRouter({
 });
 
 Vue.router = router
+
 Vue.use(require('@websanova/vue-auth'), {
    auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
    http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
    router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
 });
-
 App.router = Vue.router
-const app = new Vue({
-    el: '#app',
-    components: { App },
-    template: '<app></app>',
-    router
-});
+new Vue(App).$mount('#app');
